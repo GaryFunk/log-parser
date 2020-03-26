@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Install Node Version Manager
+echo '=== INSTALLING: Node Version Manager (Latest Version) ==='
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+# Update Node Package Manager
+echo '=== INSTALLING/UPDATING: Node Package Manager ==='
+npm install -g npm
+
+echo '=== Node Package Manager: Installing Dependencies ==='
+npm install
+
+exit 0;

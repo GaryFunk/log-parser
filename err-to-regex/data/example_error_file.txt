@@ -1,0 +1,12 @@
+Error
+===
+<p>Description</p>
+<ol>
+   <li>Detail 1</li>
+   <li>Detail 2</li>
+   <li>Detail 3</li>
+</ol>
+===
+<ul>
+   <li><a href="#" target="_blank">Link</a></li>
+</ul>

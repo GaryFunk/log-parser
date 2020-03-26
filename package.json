@@ -1,0 +1,22 @@
+{
+  "name": "zdapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "lint": "npx eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.4.13",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs-json-store": "^2.3.3",
+    "log4js": "^6.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
