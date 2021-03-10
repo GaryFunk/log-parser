@@ -1,0 +1,6 @@
+.env
+.idea/
+node_modules/
+*.txt
+test.js
+.DS_Store
