@@ -10,11 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "adm-zip": "^0.4.13",
-    "dotenv": "^8.2.0",
+    "adm-zip": "^0.5.3",
     "express": "^4.17.1",
     "fs-json-store": "^2.3.3",
-    "log4js": "^6.1.2"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0"
