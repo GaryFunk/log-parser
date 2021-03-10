@@ -18,7 +18,7 @@ app.get("/ping", async (req, res) => {
 
 app.post("/process", async (req, res) => {
     zd.get.tickets.byId(req.body.id)
-    .then(ticket => zd.get.tickets.comments.byId(ticket.id))
+    .then(async ticket => zd.get.tickets.comments.byId(ticket.id))
     .then(comments => reduceCommentsToLogs(comments))
     .then(async logs => downloadLogs(logs))
     .then(logs => checkLogsAgainstErrors(logs))
