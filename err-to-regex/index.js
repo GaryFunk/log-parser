@@ -1,13 +1,7 @@
-process.env.DIR = __dirname + "/data"
+const { DefaultEscaper } = require("./lib/escaper");
+const build_definitions = require("./lib/definition");
 
-let helpers = require("./lib/helpers");
-let ErrFile = require("./lib/errfile")
+const myEscaper = new DefaultEscaper();
+myEscaper.add_custom_escape(/Validator\s+\(\d{0,2}\)/);
 
-let errfiles = [];
-let files = helpers.readDir(process.env.DIR);
-
-for (let i = 0, len = files.length; i < len; i++) {
-	errfiles[i] = new ErrFile(files[i]);
-}
-
-module.exports = errfiles;
+module.exports = build_definitions(myEscaper);

@@ -1,0 +1,62 @@
+{
+  "name": "Undefined error",
+  "description": "This error has something to do with undefined behavior",
+  "value": "VHlwZUVycm9yOiBDYW5ub3QgcmVhZCBwcm9wZXJ0eSByZXBsYWNlIG9mIHVuZGVmaW5lZAogICAgYXQgZXNjYXBlX2RlbGltaXRlcnMgKC9Vc2Vycy9ldmVyZXR0bW9yZ2FuL0Ryb3Bib3gvTXkgTWFjIChFdmVyZXR0cy1NYWNCb29rLVByby0yLmxvY2FsKS9EZXNrdG9wL2xvZy1wYXJzZXIvZXJyLXRvLXJlZ2V4L2xpYi9oZWxwZXJzLmpzOjc0OjEyKQogICAgYXQgZXNjYXBlX3JlZ2V4X3N5bWJvbHMgKC9Vc2Vycy9ldmVyZXR0bW9yZ2FuL0Ryb3Bib3gvTXkgTWFjIChFdmVyZXR0cy1NYWNCb29rLVByby0yLmxvY2FsKS9EZXNrdG9wL2xvZy1wYXJzZXIvZXJyLXRvLXJlZ2V4L2xpYi9oZWxwZXJzLmpzOjcwOjgpCiAgICBhdCBFc2NhcGVyLmVzY2FwZSAoL1VzZXJzL2V2ZXJldHRtb3JnYW4vRHJvcGJveC9NeSBNYWMgKEV2ZXJldHRzLU1hY0Jvb2stUHJvLTIubG9jYWwpL0Rlc2t0b3AvbG9nLXBhcnNlci9lcnItdG8tcmVnZXgvbGliL2hlbHBlcnMuanM6NTI6MykKICAgIGF0IE9iamVjdC48YW5vbnltb3VzPiAoL1VzZXJzL2V2ZXJldHRtb3JnYW4vRHJvcGJveC9NeSBNYWMgKEV2ZXJldHRzLU1hY0Jvb2stUHJvLTIubG9jYWwpL0Rlc2t0b3AvbG9nLXBhcnNlci9lcnItdG8tcmVnZXgvaW5kZXguanM6NjoyNSkKICAgIGF0IE1vZHVsZS5fY29tcGlsZSAobm9kZTppbnRlcm5hbC9tb2R1bGVzL2Nqcy9sb2FkZXI6MTEwODoxNCkKICAgIGF0IE9iamVjdC5Nb2R1bGUuX2V4dGVuc2lvbnMuLmpzIChub2RlOmludGVybmFsL21vZHVsZXMvY2pzL2xvYWRlcjoxMTM3OjEwKQogICAgYXQgTW9kdWxlLmxvYWQgKG5vZGU6aW50ZXJuYWwvbW9kdWxlcy9janMvbG9hZGVyOjk3MzozMikKICAgIGF0IEZ1bmN0aW9uLk1vZHVsZS5fbG9hZCAobm9kZTppbnRlcm5hbC9tb2R1bGVzL2Nqcy9sb2FkZXI6ODEzOjE0KQogICAgYXQgRnVuY3Rpb24uZXhlY3V0ZVVzZXJFbnRyeVBvaW50IFthcyBydW5NYWluXSAobm9kZTppbnRlcm5hbC9tb2R1bGVzL3J1bl9tYWluOjc2OjEyKQogICAgYXQgbm9kZTppbnRlcm5hbC9tYWluL3J1bl9tYWluX21vZHVsZToxNzo0Nw==",
+  "hooks": [
+    {
+      "zendesk:ticket": {
+        "add": {
+          "tag": "helloworld"
+        },
+        "update": {
+          "priority": "high"
+        }
+      }
+    },
+    {
+      "slack:post": {
+        "channel": "$$ENVAR_SUPPORT_SLACK_CHANNEL_ID",
+        "message": "new ticket (#${_ticket.id) with error $$this.name"
+      }
+    },
+    {
+      "custom:api": {
+        "body": "$$ticket",
+        "endpoint": "myendpoint.com"
+      }
+    }
+  ],
+  "limit_to": [
+    "help.log",
+    "specific_zip_file.zip"
+  ],
+  "hooks_async": true,
+  "links": [
+    {
+      "Guide": "https://www.google.com"
+    },
+    {
+      "Webinar": "https://www.bing.com"
+    }
+  ],
+  "solutions": [
+    {
+      "name": "Do something to fix it",
+      "steps": [
+        {
+          "name": "name of step",
+          "description": "do something"
+        },
+        {
+          "name": "name of another step",
+          "description": "do something else",
+          "links": [
+            "Guide"
+          ]
+        }
+      ]
+    }
+  ],
+  "raw_value": "TypeError: Cannot read property replace of undefined\n    at escape_delimiters (/Users/everettmorgan/Dropbox/My Mac (Everetts-MacBook-Pro-2.local)/Desktop/log-parser/err-to-regex/lib/helpers.js:74:12)\n    at escape_regex_symbols (/Users/everettmorgan/Dropbox/My Mac (Everetts-MacBook-Pro-2.local)/Desktop/log-parser/err-to-regex/lib/helpers.js:70:8)\n    at Escaper.escape (/Users/everettmorgan/Dropbox/My Mac (Everetts-MacBook-Pro-2.local)/Desktop/log-parser/err-to-regex/lib/helpers.js:52:3)\n    at Object.<anonymous> (/Users/everettmorgan/Dropbox/My Mac (Everetts-MacBook-Pro-2.local)/Desktop/log-parser/err-to-regex/index.js:6:25)\n    at Module._compile (node:internal/modules/cjs/loader:1108:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1137:10)\n    at Module.load (node:internal/modules/cjs/loader:973:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:813:14)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)\n    at node:internal/main/run_main_module:17:47",
+  "raw_regexp": "TypeError:\\s+Cannot\\s+read\\s+property\\s+replace\\s+of\\s+undefined\\n\\s+at\\s+escape_delimiters\\s+\\(\\/Users\\/everettmorgan\\/Dropbox\\/My\\s+Mac\\s+\\(Everetts-MacBook-Pro-2\\.local\\)\\/Desktop\\/log-parser\\/err-to-regex\\/lib\\/helpers\\.js:74:12\\)\\n\\s+at\\s+escape_regex_symbols\\s+\\(\\/Users\\/everettmorgan\\/Dropbox\\/My\\s+Mac\\s+\\(Everetts-MacBook-Pro-2\\.local\\)\\/Desktop\\/log-parser\\/err-to-regex\\/lib\\/helpers\\.js:70:8\\)\\n\\s+at\\s+Escaper\\.escape\\s+\\(\\/Users\\/everettmorgan\\/Dropbox\\/My\\s+Mac\\s+\\(Everetts-MacBook-Pro-2\\.local\\)\\/Desktop\\/log-parser\\/err-to-regex\\/lib\\/helpers\\.js:52:3\\)\\n\\s+at\\s+Object\\.<anonymous>\\s+\\(\\/Users\\/everettmorgan\\/Dropbox\\/My\\s+Mac\\s+\\(Everetts-MacBook-Pro-2\\.local\\)\\/Desktop\\/log-parser\\/err-to-regex\\/index\\.js:6:25\\)\\n\\s+at\\s+Module\\._compile\\s+\\(node:internal\\/modules\\/cjs\\/loader:1108:14\\)\\n\\s+at\\s+Object\\.Module\\._extensions\\.\\.js\\s+\\(node:internal\\/modules\\/cjs\\/loader:1137:10\\)\\n\\s+at\\s+Module\\.load\\s+\\(node:internal\\/modules\\/cjs\\/loader:973:32\\)\\n\\s+at\\s+Function\\.Module\\._load\\s+\\(node:internal\\/modules\\/cjs\\/loader:813:14\\)\\n\\s+at\\s+Function\\.executeUserEntryPoint\\s+\\[as\\s+runMain\\]\\s+\\(node:internal\\/modules\\/run_main:76:12\\)\\n\\s+at\\s+node:internal\\/main\\/run_main_module:17:47"
+}
